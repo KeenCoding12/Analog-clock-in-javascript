@@ -1,0 +1,91 @@
+/* RESET */
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    display: grid;
+    place-content: center;
+    min-height: 100vh;
+    background: #fff;
+    color: #242424;
+}
+/* CLOCK */
+.clock {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    border-radius: 50%;
+    background:#fafafa ;
+    border: 12px solid #010203;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(15, 30, 48, 0.6);
+    display: grid;
+    place-content: center;
+}
+
+.number {
+    transform: rotate(calc(30deg * var(--n)));
+    position: absolute;
+    text-align: center;
+    inset: 6px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.number span {
+    transform: rotate(calc(-30deg * var(--n)));
+    display: inline-block;
+}
+
+.arrows {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.arrows::before {
+    content: "";
+    background: #e43f5a;
+    border: 2px solid #fafafa;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    z-index: 4;
+    box-shadow: 0 0 8px #e43f5a;
+}
+
+.hand {
+    position: absolute;
+    transform-origin: bottom center;
+    bottom: 50%;
+    border-radius: 50% 50% 0 0;
+    --shadow:0 0 6px;
+}
+
+.hour-hand {
+    
+    width: 12px;
+    height: 100px;
+    background: #183150;
+    box-shadow: var(--shadow) #1f4068;
+}
+
+.minute-hand {
+    width: 6px;
+    height: 130px;
+    background: #e43f5a;
+    box-shadow: var(--shadow) #e43f5a;
+}
+
+.second-hand {
+    width: 3px;
+    height: 160px;
+    background: #00a8cc;
+    box-shadow: var(--shadow) #00a8cc;
+}
